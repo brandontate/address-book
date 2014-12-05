@@ -2,33 +2,33 @@
 <html ng-app="AddressApp">
     <head>
         <title>Address Book</title>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" text="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     </head>
     <body>
         <h1>Address Book</h1>
         <div class="container" ng-controller="AddressBookController as address">
             <form name="ContactForm" ng-submit="ContactForm.$valid && address.addContact()">
-                <div>
-                    <label>Name</label>
-                    <input type="text" ng-model="address.newContact.name" required>
+                <div class="form-group">
+                    <label class="control-label">Name</label>
+                    <input class="form-control" type="text" ng-model="address.newContact.name" required>
                 </div>
-                <div>
-                    <label>Email</label>
-                    <input type="text" ng-model="address.newContact.email" required>
+                <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <input class="form-control" type="text" ng-model="address.newContact.email" required>
                 </div>
-                <div>
-                    <label>Phone Number</label>
-                    <input type="text" ng-model="address.newContact.phone" required>
+                <div class="form-group">
+                    <label class="control-label">Phone Number</label>
+                    <input class="form-control" type="text" ng-model="address.newContact.phone" required>
                 </div>
-                <div>
-                    <label>Address</label>
-                    <input type="text" ng-model="address.newContact.address" required>
+                <div class="form-group">
+                    <label class="control-label">Address</label>
+                    <input class="form-control" type="text" ng-model="address.newContact.address" required>
                 </div>
                 <input type="submit" value="Add Contact" ng-disabled="ContactForm.$invalid">
             </form>
 
             <div>
-                <table>
+                <table class="table bordered-table">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -51,6 +51,8 @@
             </div>
         </div>
     </body>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="js/main.js"></script>
 </html>
